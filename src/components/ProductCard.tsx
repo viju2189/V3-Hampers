@@ -35,7 +35,7 @@ const ProductCard: React.FC<IProductCard> = (props) => {
                     <h2 className='font-medium'>{product.title}</h2>
                 </div>
 
-                <div onClick={onAddToCartClick} className='flex w-[60%] mx-auto mt-3 font-semibold border-2 z-[1000] border-[#c7d2fe] justify-center tracking-wide hover:bg-[#c7d2fe] rounded-lg items-center  text-blck px-4 py-2 cursor-pointer'>
+                <div onClick={onAddToCartClick} className='flex mx-auto mt-3 font-semibold border-2 border-[#c7d2fe] justify-center tracking-wide hover:bg-[#c7d2fe] rounded-lg items-center text-black px-4 py-2 cursor-pointer sm:w-[60%] md:w-auto'>
                     <FaShoppingCart className='mr-2' /> Add To Cart
                 </div>
             </div>

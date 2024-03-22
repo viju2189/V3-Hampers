@@ -16,27 +16,22 @@ const Cart = () => {
         const total = items.reduce((accumulator, item) => accumulator + Math.ceil(item.price * 0.9) * item.quantity, 0);
         return total;
     }
+
     return (
-        <div className='fixed left-0 top-0 z-20 w-full h-full flex items-center justify-center'>
-            <div className='absolute inset-0 bg-black opacity-70' />
-            <div className='max-w-[400px] w-full bg-white p-6 rounded-md relative'>
-                <IoCloseCircle className='absolute top-0 right-0 mr-6 mt-4 text-2xl cursor-pointer font-bold text-[red]' onClick={onClose} />
-                <h3 className='pt-6 text-lg font-bold text-gray-600 uppercase text-center py-4'>Your Cart</h3>
-                {
-                    items.map((item) => (
-                        <CartItems key={item.id} item={item} />
-                    ))
-                }
-
-                <div className='flex justify-between items-center font-medium text-xl py-4'>
-                    <p>Total</p>
-                    <p>{`£ ${getTotal()}.00`}</p>
+        <div className='fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-70'>
+            <div className='relative max-w-[60%] w-full max-h-[90%] bg-white p-6 rounded-md overflow-auto'>
+                <IoCloseCircle className='absolute top-0 right-0 mr-4 mt-4 text-4xl cursor-pointer font-bold text-black' onClick={onClose} />
+                <h3 className='text-lg font-bold text-gray-600 uppercase text-center py-4'>Your Cart</h3>
+                {items.map((item) => (
+                    <CartItems key={item.id} item={item} />
+                ))}
+                <div className='flex justify-center *: items-center font-medium text-xl py-4 mt-4'>
+                    <p>Total: </p>
+                    <p>{`£${getTotal()}.00`}</p>
                 </div>
-
-                <div>
-                    <button className='bg-[#c7d2fe] text-black text-center w-full rounded-md py-2  hover:bg-[#c7d2fe] '> Check Out Cart</button>
+                <div className='flex justify-center'>
+                    <button className='w-[50%] py-2 text-center text-white bg-gray-700 hover:bg-gray-800 rounded-md'>Check Out Cart</button>
                 </div>
-
             </div>
         </div>
     )
