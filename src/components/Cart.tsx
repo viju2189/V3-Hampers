@@ -21,17 +21,23 @@ const Cart = () => {
         <div className='fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-70'>
             <div className='relative max-w-[60%] w-full max-h-[90%] bg-white p-6 rounded-md overflow-auto'>
                 <IoCloseCircle className='absolute top-0 right-0 mr-4 mt-4 text-4xl cursor-pointer font-bold text-black' onClick={onClose} />
-                <h3 className='text-lg font-bold text-gray-600 uppercase text-center py-4'>Your Cart</h3>
-                {items.map((item) => (
-                    <CartItems key={item.id} item={item} />
-                ))}
-                <div className='flex justify-center *: items-center font-medium text-xl py-4 mt-4'>
-                    <p>Total: </p>
-                    <p>{`£${getTotal()}.00`}</p>
-                </div>
-                <div className='flex justify-center'>
-                    <button className='w-[50%] py-2 text-center text-white bg-gray-700 hover:bg-gray-800 rounded-md'>Check Out Cart</button>
-                </div>
+                {items.length > 0 && <h3 className='text-lg font-bold text-gray-600 uppercase text-center py-4'>Your Cart</h3>}
+                {items.length === 0 ? (
+                    <h1 className='text-center text-[black] text-4xl'>Your cart is empty</h1>
+                ) : (
+                    <>
+                        {items.map((item) => (
+                            <CartItems key={item.id} item={item} />
+                        ))}
+                        <div className='flex justify-center items-center font-medium text-xl py-4 mt-4'>
+                            <p>Total: </p>
+                            <p>{`£${getTotal()}.00`}</p>
+                        </div>
+                        <div className='flex justify-center'>
+                            <button className='w-[50%] py-2 text-center text-white bg-gray-700 hover:bg-gray-800 rounded-md'>Check Out Cart</button>
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     )
