@@ -23,7 +23,7 @@ const Cart = () => {
                 <IoCloseCircle className='absolute top-0 right-0 mr-4 mt-4 text-4xl cursor-pointer font-bold text-black' onClick={onClose} />
                 {items.length > 0 && <h3 className='text-lg font-bold text-gray-600 uppercase text-center py-4'>Your Cart</h3>}
                 {items.length === 0 ? (
-                    <h1 className='text-center text-[black] text-4xl'>Your cart is empty</h1>
+                    <h1 className='text-center text-[black] text-4xl font-bold p-16'>Your Cart Is Empty</h1>
                 ) : (
                     <>
                         {items.map((item) => (

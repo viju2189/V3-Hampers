@@ -40,7 +40,7 @@ const CartItem: React.FC<ICartItemProps> = (props) => {
                     <p className='text-black text-sm font-bold border-2 border-[black] px-[7.2px] py-[1px] rounded-[4px]'>{item.quantity}</p>
                     <button onClick={onDecreaseItemsClick} className='unset font-bold text-[2.1rem] cursor-pointer'><CiSquareMinus /></button>
                 </div>
-                <RxCross1 onClick={onRemoveItemClick} className='cursor-pointer' />
+                <RxCross1 onClick={onRemoveItemClick} className='cursor-pointer text-2xl' />
             </div>
             <hr className='w-full' />
         </>
